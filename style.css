@@ -21,11 +21,19 @@ div {
     display: flex;
     flex-direction: column;
 
+
    width: 300px;
    height: 300px;
    border: 2px solid black ;
 
 }
-button {
-
+ul{
+    padding-left: 20px;
 }
+li {
+    cursor: pointer;
+  }
+
+  .strikethrough {
+    text-decoration: line-through;
+  }
