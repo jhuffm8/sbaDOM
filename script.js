@@ -9,28 +9,31 @@ todoList.addEventListener("click", (e) => {
 })
  
 
-
 function addTodo(e) {
     e.preventDefault(); // prevent form submitting to a new html page
     const newTodo = userInput.value;// grabbing input value and storing into a varibale
     // console.log(userInput.value)
-    for(let i =0; i < todoListArr.length; i++){
-        console.log(todoListArr[i].innerText)
-        // if(userInput.value === todoListArr[i].innerText ){
-        //    alert("Error")
-        //     return;
-        // }       
-    }
+
+    
     //check for empty string; // validate if string is empty or not
     if(newTodo === ""){
         alert("Cannot be empty")
         return;
     };
+    // atempting to check if item is already in todo list but cant get it to check items
 
-    todoList.appendChild(document.createElement('li')).textContent = newTodo;
-    userInput.value = "";
+    for(let i =0; i < todoListArr.length; i++){
+        // console.log(todoListArr[i].innerText)
+        if(newTodo === todoListArr[i].innerText ){
+           alert("Error")
+            return;
+        } 
+    }
+
+        todoList.appendChild(document.createElement('li')).textContent = newTodo; 
+        userInput.value = "";    
+ 
 
 }
 subBtn.addEventListener("click", addTodo);
-
 
